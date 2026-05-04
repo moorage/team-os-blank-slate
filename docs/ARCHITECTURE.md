@@ -58,6 +58,7 @@ Current files:
 - `product-development/product/**`
 - `product-development/engineering/**`
 - `product-development/analytics/**`
+- `product-development/marketing/**`
 - `product-development/launches/**`
 
 ### Team directory

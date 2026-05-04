@@ -13,7 +13,7 @@ It combines:
 ## Repository layout
 
 - `kanban/` — cards, append-only events, comments, board definitions, templates, generated views, and CLI scripts
-- `product-development/` — PRDs, investigations, analytics notes, launch artifacts, and the feature index
+- `product-development/` — PRDs, investigations, analytics notes, marketing artifacts, launch artifacts, and the feature index
 - `team/` — people and functional-alias records for Team OS ownership and routing identifiers
 - `apps/native/` — `TeamOSCore`, shared SwiftUI shells, and buildable macOS/iOS app targets
 - `docs/` — architecture, schema, product spec, operating rhythm, native-app guidance, ideas, and ExecPlans

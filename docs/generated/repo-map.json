@@ -31807,10 +31807,6 @@
               ]
             },
             {
-              "type": "file",
-              "name": ".gitignore"
-            },
-            {
               "type": "dir",
               "name": "AppShared",
               "children": [
@@ -32573,6 +32569,16 @@
                   "name": "family-preferences-quiz.md"
                 }
               ]
+            }
+          ]
+        },
+        {
+          "type": "dir",
+          "name": "marketing",
+          "children": [
+            {
+              "type": "file",
+              "name": "AGENTS.md"
             }
           ]
         },
