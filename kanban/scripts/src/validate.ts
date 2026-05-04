@@ -46,6 +46,20 @@ function buildFeatureIndexMap(entries: FeatureIndexEntry[]) {
   return new Map(entries.map((entry) => [entry.key, entry]));
 }
 
+function cardIdentityReferences(card: CardRecord): Array<{ field: string; value: string }> {
+  const references = [
+    { field: "owner", value: card.frontmatter.owner },
+    ...card.frontmatter.assignees.map((value) => ({ field: "assignees", value })),
+    ...card.frontmatter.reviewers.map((value) => ({ field: "reviewers", value })),
+    ...card.frontmatter.watchers.map((value) => ({ field: "watchers", value })),
+    ...card.frontmatter.collaborators.map((value) => ({ field: "collaborators", value })),
+  ];
+  if (card.frontmatter.sitting_with) {
+    references.push({ field: "sitting_with", value: card.frontmatter.sitting_with });
+  }
+  return references;
+}
+
 async function writeValidationReport(root: string, errors: ValidationIssue[]): Promise<string> {
   const viewsDir = path.join(root, "kanban", "views");
   const reportPath = path.join(viewsDir, "validation-errors.md");
@@ -64,7 +78,7 @@ export async function validateRepository(
   root: string,
   options: { writeReportOnly?: boolean } = {},
 ): Promise<ValidationResult> {
-  const { boards, cards, featureIndex, issues } = await loadRepositorySafely(root);
+  const { boards, cards, featureIndex, teamDirectory, issues } = await loadRepositorySafely(root);
   const errors: ValidationIssue[] = issues.map((issue) => ({
     code: `malformed-${issue.kind}`,
     message: issue.message,
@@ -73,6 +87,7 @@ export async function validateRepository(
 
   const boardsById = new Map(boards.map((board) => [board.id, board]));
   const featureIndexByKey = buildFeatureIndexMap(featureIndex.entries);
+  const teamDirectoryKeys = new Set(teamDirectory.entries.map((entry) => entry.key));
   const counts = new Map<string, number>();
   const cardIds = new Map<string, string[]>();
 
@@ -100,6 +115,16 @@ export async function validateRepository(
         path: relCardPath,
       });
       continue;
+    }
+
+    for (const reference of cardIdentityReferences(card)) {
+      if (!teamDirectoryKeys.has(reference.value)) {
+        errors.push({
+          code: "unknown-team-identifier",
+          message: `Field ${reference.field} references ${reference.value}, which is missing from team/people/index.yaml.`,
+          path: relCardPath,
+        });
+      }
     }
 
     if (!board.card_types.includes(frontmatter.type)) {

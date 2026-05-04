@@ -12,6 +12,7 @@
   - 2026-05-04: converted the repository into a Team OS reference implementation with text-native kanban data, linked product artifacts, generated views, Codex skills, and a Swift native-core package
   - 2026-05-04: replaced placeholder-only native GitHub services with live REST-backed auth, repository inspection, branch creation, file writes, and pull-request upserts
   - 2026-05-04: generated and checked in `apps/native/TeamOSApps.xcodeproj` plus shared macOS/iOS shells that build against `TeamOSCore`
+  - 2026-05-04: added `team/people/` as the canonical roster surface for human and functional-alias identifiers used by sample cards
   - 2026-05-04: prior harness work completed commit-message AI model trailer enforcement
 - commands run:
   - `npm --prefix kanban/scripts install --cache /tmp/team-os-npm-cache`

@@ -40,9 +40,24 @@ Controls:
 - Team OS marker inspection before any write-ready state is exposed
 - explicit documentation in `docs/NATIVE_APPS.md` and `apps/native/README.md`
 
+### Team directory
+
+Threats:
+
+- private personal contact data committed without clear repository need
+- invented or stale handles causing misrouting across Slack, GitHub, or other platforms
+- cards duplicating contact data instead of pointing to one canonical roster
+
+Controls:
+
+- `team/AGENTS.md` requires business-scoped, non-invented roster data
+- `team/people/index.yaml` is the canonical directory for current person and alias identifiers
+- cards and artifacts should reference stable roster keys rather than embedding handle data inline
+
 ## Secrets and credentials
 
 - do not store GitHub tokens, app secrets, or private keys in Team OS files
+- do not store personal private contact details in `team/people/**` unless the repository explicitly needs them and the value is meant to be committed
 - the current app targets accept a development PAT in memory only and do not persist it to disk
 - live GitHub services must authenticate and inspect repository permissions before reporting `RepoAccessStatus.writeReady`
 - use repo-relative links to durable artifacts instead of pasting secret-bearing URLs or payloads into cards

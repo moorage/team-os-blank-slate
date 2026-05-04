@@ -1,0 +1,10 @@
+id: matt
+kind: person
+display_name: Matt
+status: active
+summary: Primary human owner referenced by the current sample Team OS cards and feature index entries.
+handles: {}
+references:
+  - kanban/cards/KAN-2026-0001/card.md
+  - kanban/cards/KAN-2026-0002/card.md
+  - product-development/feature-index.yaml

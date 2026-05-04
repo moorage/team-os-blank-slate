@@ -128,6 +128,16 @@ export const FeatureIndexSchema = z.object({
   entries: z.array(FeatureIndexEntrySchema).default([]),
 });
 
+export const TeamDirectoryEntrySchema = z.object({
+  key: NonEmptyStringSchema,
+  kind: z.enum(["person", "functional-alias"]),
+  path: NonEmptyStringSchema,
+});
+
+export const TeamDirectoryIndexSchema = z.object({
+  entries: z.array(TeamDirectoryEntrySchema).default([]),
+});
+
 export type ArtifactLink = z.infer<typeof ArtifactLinkSchema>;
 export type CardFrontmatter = z.infer<typeof CardFrontmatterSchema>;
 export type BoardColumn = z.infer<typeof BoardColumnSchema>;
@@ -136,6 +146,7 @@ export type EventRecordData = z.infer<typeof EventSchema>;
 export type CommentFrontmatter = z.infer<typeof CommentFrontmatterSchema>;
 export type FeatureIndex = z.infer<typeof FeatureIndexSchema>;
 export type FeatureIndexEntry = z.infer<typeof FeatureIndexEntrySchema>;
+export type TeamDirectoryIndex = z.infer<typeof TeamDirectoryIndexSchema>;
 
 export type EventRecord = EventRecordData & { path: string };
 export type CommentRecord = CommentFrontmatter & { path: string; body: string };
@@ -148,7 +159,7 @@ export type CardRecord = {
   path: string;
 };
 
-export type LoadIssueKind = "board" | "card" | "event" | "comment" | "feature-index";
+export type LoadIssueKind = "board" | "card" | "event" | "comment" | "feature-index" | "team-directory";
 
 export type LoadIssue = {
   kind: LoadIssueKind;

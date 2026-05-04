@@ -7,7 +7,8 @@ Start here. Use this file as the map of what is real today and how to extend it 
 
 - `kanban/` is the workflow source of truth. Cards stay in stable directories and state transitions are recorded as append-only events.
 - `product-development/` stores durable product context linked from kanban cards.
-- `apps/native/` stores Swift-native architecture and mutation-planning code for future macOS and iOS clients.
+- `team/` stores canonical people and functional-alias records referenced from Team OS cards.
+- `apps/native/` stores Swift-native architecture and mutation-planning code for macOS and iOS clients.
 - `.agents/skills/` stores repeatable Codex workflows for Team OS maintenance.
 
 ## First reads
@@ -66,6 +67,7 @@ Before non-trivial work, read in this order:
 - ideation backlog and prioritization rules: `docs/ideas/`
 - Team OS workflow state: `kanban/`
 - Team OS product context: `product-development/`
+- Team OS people and handle directory: `team/`
 - security rules: `docs/SECURITY.md`
 - reliability rules: `docs/RELIABILITY.md`
 - quality ledger and debt register: `docs/QUALITY_LEDGER.md`

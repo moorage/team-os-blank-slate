@@ -1,0 +1,28 @@
+entries:
+  - key: analytics
+    kind: functional-alias
+    path: team/people/analytics.yaml
+  - key: backend-eng
+    kind: functional-alias
+    path: team/people/backend-eng.yaml
+  - key: design
+    kind: functional-alias
+    path: team/people/design.yaml
+  - key: engineering
+    kind: functional-alias
+    path: team/people/engineering.yaml
+  - key: matt
+    kind: person
+    path: team/people/matt.yaml
+  - key: ops
+    kind: functional-alias
+    path: team/people/ops.yaml
+  - key: product
+    kind: functional-alias
+    path: team/people/product.yaml
+  - key: qa
+    kind: functional-alias
+    path: team/people/qa.yaml
+  - key: support
+    kind: functional-alias
+    path: team/people/support.yaml

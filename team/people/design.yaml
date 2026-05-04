@@ -1,0 +1,8 @@
+id: design
+kind: functional-alias
+display_name: Design
+status: active
+summary: Functional collaborator alias referenced by the sample product card.
+handles: {}
+references:
+  - kanban/cards/KAN-2026-0001/card.md

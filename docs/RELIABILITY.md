@@ -13,8 +13,9 @@ This document defines current reliability expectations for Team OS.
 
 ### Kanban validation
 
-- `npm run team-os:validate` must parse all committed board, card, event, comment, and index files.
+- `npm run team-os:validate` must parse all committed board, card, event, comment, feature-index, and team-directory files.
 - validation must always write `kanban/views/validation-errors.md`, even when it exits non-zero
+- card ownership and routing identifiers must resolve through `team/people/index.yaml`
 
 ### Kanban rendering
 

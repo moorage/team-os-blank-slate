@@ -80,6 +80,7 @@ Columns may define:
 - `watchers` want updates but do not own the work
 - `collaborators` help regularly without becoming the accountable owner
 - `sitting_with` means who currently holds the next action
+- every value in those fields must exist in `team/people/index.yaml`
 
 ## Generated views
 

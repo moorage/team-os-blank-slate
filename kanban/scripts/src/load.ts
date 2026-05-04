@@ -13,11 +13,13 @@ import {
   CommentFrontmatterSchema,
   EventSchema,
   FeatureIndexSchema,
+  TeamDirectoryIndexSchema,
   type Board,
   type CardRecord,
   type CommentRecord,
   type EventRecord,
   type FeatureIndex,
+  type TeamDirectoryIndex,
   type LoadIssue,
 } from "./schemas.js";
 
@@ -109,16 +111,24 @@ export async function loadFeatureIndex(root: string): Promise<FeatureIndex> {
   return FeatureIndexSchema.parse(parseYaml(text));
 }
 
+export async function loadTeamDirectoryIndex(root: string): Promise<TeamDirectoryIndex> {
+  const filePath = path.join(root, "team", "people", "index.yaml");
+  const text = await readFile(filePath, "utf8");
+  return TeamDirectoryIndexSchema.parse(parseYaml(text));
+}
+
 export async function loadRepositorySafely(root: string): Promise<{
   boards: Board[];
   cards: CardRecord[];
   featureIndex: FeatureIndex;
+  teamDirectory: TeamDirectoryIndex;
   issues: LoadIssue[];
 }> {
   const issues: LoadIssue[] = [];
   const boards: Board[] = [];
   const cards: CardRecord[] = [];
   let featureIndex: FeatureIndex = { entries: [] };
+  let teamDirectory: TeamDirectoryIndex = { entries: [] };
 
   const boardFiles = await fg(BOARD_GLOB, { cwd: root, absolute: true });
   for (const boardFile of boardFiles) {
@@ -136,6 +146,16 @@ export async function loadRepositorySafely(root: string): Promise<{
       kind: "feature-index",
       message: formatError(error),
       path: path.join(root, "product-development", "feature-index.yaml"),
+    });
+  }
+
+  try {
+    teamDirectory = await loadTeamDirectoryIndex(root);
+  } catch (error) {
+    issues.push({
+      kind: "team-directory",
+      message: formatError(error),
+      path: path.join(root, "team", "people", "index.yaml"),
     });
   }
 
@@ -191,5 +211,5 @@ export async function loadRepositorySafely(root: string): Promise<{
   cards.sort((left, right) => left.frontmatter.id.localeCompare(right.frontmatter.id, "en", { numeric: true }));
   boards.sort((left, right) => left.id.localeCompare(right.id));
 
-  return { boards, cards, featureIndex, issues };
+  return { boards, cards, featureIndex, teamDirectory, issues };
 }

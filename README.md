@@ -6,6 +6,7 @@ It combines:
 
 - a text-native kanban under `kanban/`
 - durable product context under `product-development/`
+- a canonical team directory under `team/`
 - Codex workflow guidance in `AGENTS.md` and `.agents/skills/`
 - buildable Apple clients under `apps/native/` that treat Git branches and pull requests as the only write path
 
@@ -13,6 +14,7 @@ It combines:
 
 - `kanban/` — cards, append-only events, comments, board definitions, templates, generated views, and CLI scripts
 - `product-development/` — PRDs, investigations, analytics notes, launch artifacts, and the feature index
+- `team/` — people and functional-alias records for Team OS ownership and routing identifiers
 - `apps/native/` — `TeamOSCore`, shared SwiftUI shells, and buildable macOS/iOS app targets
 - `docs/` — architecture, schema, product spec, operating rhythm, native-app guidance, ideas, and ExecPlans
 

@@ -1,0 +1,8 @@
+id: ops
+kind: functional-alias
+display_name: Ops
+status: active
+summary: Functional collaborator alias referenced by the sample bug card.
+handles: {}
+references:
+  - kanban/cards/KAN-2026-0002/card.md

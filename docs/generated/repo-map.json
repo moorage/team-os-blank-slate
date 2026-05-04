@@ -32703,6 +32703,70 @@
           ]
         }
       ]
+    },
+    {
+      "type": "dir",
+      "name": "team",
+      "children": [
+        {
+          "type": "file",
+          "name": "AGENTS.md"
+        },
+        {
+          "type": "file",
+          "name": "README.md"
+        },
+        {
+          "type": "dir",
+          "name": "people",
+          "children": [
+            {
+              "type": "file",
+              "name": "README.md"
+            },
+            {
+              "type": "file",
+              "name": "analytics.yaml"
+            },
+            {
+              "type": "file",
+              "name": "backend-eng.yaml"
+            },
+            {
+              "type": "file",
+              "name": "design.yaml"
+            },
+            {
+              "type": "file",
+              "name": "engineering.yaml"
+            },
+            {
+              "type": "file",
+              "name": "index.yaml"
+            },
+            {
+              "type": "file",
+              "name": "matt.yaml"
+            },
+            {
+              "type": "file",
+              "name": "ops.yaml"
+            },
+            {
+              "type": "file",
+              "name": "product.yaml"
+            },
+            {
+              "type": "file",
+              "name": "qa.yaml"
+            },
+            {
+              "type": "file",
+              "name": "support.yaml"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

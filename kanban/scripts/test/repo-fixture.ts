@@ -9,6 +9,7 @@ export async function createFixtureRepo(): Promise<string> {
   const tempRoot = await mkdtemp(path.join(tmpdir(), "team-os-kanban-"));
   await cp(path.join(repositoryRoot, "kanban"), path.join(tempRoot, "kanban"), { recursive: true });
   await cp(path.join(repositoryRoot, "product-development"), path.join(tempRoot, "product-development"), { recursive: true });
+  await cp(path.join(repositoryRoot, "team"), path.join(tempRoot, "team"), { recursive: true });
   return tempRoot;
 }
 

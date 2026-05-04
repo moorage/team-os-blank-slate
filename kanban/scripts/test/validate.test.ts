@@ -54,4 +54,18 @@ describe("validateRepository", () => {
     expect(report).toContain("malformed-comment");
     expect(report).toContain("malformed-event");
   });
+
+  it("fails when a card identity field is missing from the team directory", async () => {
+    const root = await createFixtureRepo();
+    fixtures.push(root);
+
+    const cardPath = "kanban/cards/KAN-2026-0001/card.md";
+    const original = await readFixtureFile(root, cardPath);
+    await writeFixtureFile(root, cardPath, original.replace("owner: matt", "owner: missing-person"));
+
+    await expect(validateRepository(root)).rejects.toThrow(/Validation failed/);
+    const report = await readFixtureFile(root, "kanban/views/validation-errors.md");
+    expect(report).toContain("unknown-team-identifier");
+    expect(report).toContain("team/people/index.yaml");
+  });
 });
