@@ -1,0 +1,29 @@
+{
+  "name": "new-codex-project-harness",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "hooks:install": "node scripts/install-git-hooks.mjs",
+    "test:git-hooks": "node scripts/git-hooks/commit-msg.test.mjs",
+    "verify": "npm run test:git-hooks && npm run verify:ideas && npm run verify:docs && npm run verify:execplan",
+    "verify:ideas": "python3 scripts/check_ideation.py",
+    "verify:docs": "python3 scripts/knowledge/check_docs.py",
+    "verify:execplan": "python3 scripts/check_execplan.py",
+    "knowledge:refresh": "python3 scripts/knowledge/generate_repo_map.py && python3 scripts/knowledge/update_quality_ledger.py",
+    "knowledge:suggest": "python3 scripts/knowledge/suggest_doc_updates.py",
+    "lint": "node scripts/smoke/not-implemented.mjs lint",
+    "typecheck": "node scripts/smoke/not-implemented.mjs typecheck",
+    "test:unit": "npm run test:git-hooks",
+    "test:integration": "node scripts/smoke/not-implemented.mjs integration",
+    "test:webhook-smoke": "node scripts/smoke/not-implemented.mjs webhook",
+    "test:eval-smoke": "node scripts/smoke/not-implemented.mjs eval",
+    "test:e2e": "node scripts/smoke/not-implemented.mjs e2e",
+    "test:voice-smoke": "node scripts/smoke/not-implemented.mjs voice",
+    "eval:patient-agent": "node scripts/smoke/not-implemented.mjs patient-agent-eval",
+    "capture:screencast": "node scripts/ci/record_screencast.mjs",
+    "capture:screencast:run": "node scripts/ci/run_with_screencast.mjs"
+  },
+  "engines": {
+    "node": "25.9.0"
+  }
+}

@@ -1,0 +1,35 @@
+model = "gpt-5.4"
+sandbox_mode = "workspace-write"
+approval_policy = "on-request"
+personality = "pragmatic"
+web_search = "live"
+model_reasoning_effort = "medium"
+
+project_root_markers = [".git", ".hg", ".sl", "AGENTS.md"]
+
+[mcp_servers.neon]
+url = "https://mcp.neon.tech/mcp"
+bearer_token_env_var = "NEON_API_KEY"
+
+[mcp_servers.openaiDeveloperDocs]
+url = "https://developers.openai.com/mcp"
+
+
+[projects."/workspace"]
+trust_level = "trusted"
+
+[features]
+unified_exec = true
+multi_agent = true
+apps = true
+runtime_metrics = true
+request_rule = true
+
+[sandbox_workspace_write]
+network_access = true
+writable_roots = []
+exclude_tmpdir_env_var = false
+exclude_slash_tmp = false
+
+[agents]
+# Start with one strong generalist loop + skills before adding role sprawl.
