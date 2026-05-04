@@ -1,6 +1,16 @@
 # Team OS Blank Slate
 
-This repository is a working Team OS reference implementation for Codex.
+This repository is a working Team OS reference implementation for Codex.  Start from here and run your own version of it.
+
+## Local setup
+
+Fetch and run the installer directly from GitHub:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/moorage/team-os-blank-slate/main/install.sh | bash -s -- my-team-os
+```
+
+## Overview
 
 It combines:
 
@@ -29,25 +39,7 @@ It combines:
 - `xcodebuild -project apps/native/TeamOSApps.xcodeproj -scheme TeamOSiOSApp -configuration Debug -destination 'generic/platform=iOS Simulator' build`
 - `npm run verify`
 
-## Local setup
 
-```sh
-npm install
-npm run hooks:install
-npm --prefix kanban/scripts install
-```
-
-Bootstrap a fresh Team OS copy into a new folder:
-
-```sh
-./install.sh my-team-os
-```
-
-Or fetch and run the installer directly from GitHub:
-
-```sh
-curl -fsSL https://raw.githubusercontent.com/moorage/team-os-blank-slate/main/install.sh | bash -s -- my-team-os
-```
 
 Regenerate the checked-in Xcode project after target changes:
 
