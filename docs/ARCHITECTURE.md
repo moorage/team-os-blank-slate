@@ -56,8 +56,24 @@ Current files:
 
 - `product-development/feature-index.yaml`
 - `product-development/product/**`
+- `product-development/design/**`
+- `product-development/customer-insights/**`
+- `product-development/growth/**`
+- `product-development/customer-journeys/**`
+- `product-development/customer-success/**`
+- `product-development/sales-enablement/**`
 - `product-development/engineering/**`
 - `product-development/analytics/**`
+- `product-development/security-privacy-compliance/**`
+- `product-development/platform-infrastructure-reliability/**`
+- `product-development/support/**`
+- `product-development/quality/**`
+- `product-development/ux-writing/**`
+- `product-development/pricing-packaging/**`
+- `product-development/partnerships/**`
+- `product-development/trust-safety/**`
+- `product-development/localization/**`
+- `product-development/accessibility/**`
 - `product-development/marketing/**`
 - `product-development/launches/**`
 

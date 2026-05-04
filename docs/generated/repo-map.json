@@ -32486,6 +32486,16 @@
         },
         {
           "type": "dir",
+          "name": "accessibility",
+          "children": [
+            {
+              "type": "file",
+              "name": "AGENTS.md"
+            }
+          ]
+        },
+        {
+          "type": "dir",
           "name": "analytics",
           "children": [
             {
@@ -32505,6 +32515,46 @@
                   "name": "family-preferences-quiz-baseline.md"
                 }
               ]
+            }
+          ]
+        },
+        {
+          "type": "dir",
+          "name": "customer-insights",
+          "children": [
+            {
+              "type": "file",
+              "name": "AGENTS.md"
+            }
+          ]
+        },
+        {
+          "type": "dir",
+          "name": "customer-journeys",
+          "children": [
+            {
+              "type": "file",
+              "name": "AGENTS.md"
+            }
+          ]
+        },
+        {
+          "type": "dir",
+          "name": "customer-success",
+          "children": [
+            {
+              "type": "file",
+              "name": "AGENTS.md"
+            }
+          ]
+        },
+        {
+          "type": "dir",
+          "name": "design",
+          "children": [
+            {
+              "type": "file",
+              "name": "AGENTS.md"
             }
           ]
         },
@@ -32544,6 +32594,16 @@
         },
         {
           "type": "dir",
+          "name": "growth",
+          "children": [
+            {
+              "type": "file",
+              "name": "AGENTS.md"
+            }
+          ]
+        },
+        {
+          "type": "dir",
           "name": "launches",
           "children": [
             {
@@ -32574,7 +32634,47 @@
         },
         {
           "type": "dir",
+          "name": "localization",
+          "children": [
+            {
+              "type": "file",
+              "name": "AGENTS.md"
+            }
+          ]
+        },
+        {
+          "type": "dir",
           "name": "marketing",
+          "children": [
+            {
+              "type": "file",
+              "name": "AGENTS.md"
+            }
+          ]
+        },
+        {
+          "type": "dir",
+          "name": "partnerships",
+          "children": [
+            {
+              "type": "file",
+              "name": "AGENTS.md"
+            }
+          ]
+        },
+        {
+          "type": "dir",
+          "name": "platform-infrastructure-reliability",
+          "children": [
+            {
+              "type": "file",
+              "name": "AGENTS.md"
+            }
+          ]
+        },
+        {
+          "type": "dir",
+          "name": "pricing-packaging",
           "children": [
             {
               "type": "file",
@@ -32615,6 +32715,66 @@
                   ]
                 }
               ]
+            }
+          ]
+        },
+        {
+          "type": "dir",
+          "name": "quality",
+          "children": [
+            {
+              "type": "file",
+              "name": "AGENTS.md"
+            }
+          ]
+        },
+        {
+          "type": "dir",
+          "name": "sales-enablement",
+          "children": [
+            {
+              "type": "file",
+              "name": "AGENTS.md"
+            }
+          ]
+        },
+        {
+          "type": "dir",
+          "name": "security-privacy-compliance",
+          "children": [
+            {
+              "type": "file",
+              "name": "AGENTS.md"
+            }
+          ]
+        },
+        {
+          "type": "dir",
+          "name": "support",
+          "children": [
+            {
+              "type": "file",
+              "name": "AGENTS.md"
+            }
+          ]
+        },
+        {
+          "type": "dir",
+          "name": "trust-safety",
+          "children": [
+            {
+              "type": "file",
+              "name": "AGENTS.md"
+            }
+          ]
+        },
+        {
+          "type": "dir",
+          "name": "ux-writing",
+          "children": [
+            {
+              "type": "file",
+              "name": "AGENTS.md"
             }
           ]
         }
