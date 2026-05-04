@@ -22,4 +22,5 @@ Every document under `docs/ideas/backlog/` must appear here.
 
 | Priority lane | Status | Impact | Confidence | Effort | Idea | Why now | Doc |
 | --- | --- | --- | --- | --- | --- | --- | --- |
+| `now` | `promoted` | `high` | `medium` | `high` | Team OS text kanban for Codex | Implementation is active under the Team OS ExecPlan and reshapes the repository into a repo-native workflow system. | `docs/ideas/backlog/team-os-text-kanban.md` |
 | `now` | `promoted` | `high` | `medium` | `high` | Central auth platform | Shared auth boundary, stale repo docs, and external-app compatibility work all need one coordinated execution plan. | `docs/ideas/backlog/central-auth-platform.md` |

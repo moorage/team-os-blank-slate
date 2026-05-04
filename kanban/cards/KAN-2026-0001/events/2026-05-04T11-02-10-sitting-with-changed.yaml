@@ -1,0 +1,10 @@
+timestamp: 2026-05-04T11:02:10Z
+type: sitting-with-changed
+actor: matt
+card_id: KAN-2026-0001
+from_sitting_with: product
+sitting_with: analytics
+sitting_reason: Waiting on a baseline funnel read before definition work starts.
+sitting_since: 2026-05-04T11:02:10Z
+sitting_expected_action: Attach funnel baseline findings and highlight which question sequence looks most promising.
+summary: Handed the next action to analytics for baseline work.

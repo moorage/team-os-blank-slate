@@ -1,0 +1,30 @@
+id: bugs
+name: Bugs
+description: Bug and incident work from triage through resolution.
+card_types:
+  - bug
+  - incident
+columns:
+  - id: triage
+    label: Triage
+  - id: investigating
+    label: Investigating
+    wip_limit: 4
+  - id: fixing
+    label: Fixing
+    wip_limit: 4
+  - id: blocked
+    label: Blocked
+    wip_limit: 3
+  - id: validating
+    label: Validating
+    wip_limit: 3
+  - id: resolved
+    label: Resolved
+done_rules:
+  validating:
+    required_artifact_types:
+      - bug-investigation
+  resolved:
+    required_artifact_types:
+      - bug-investigation

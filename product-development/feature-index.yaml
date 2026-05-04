@@ -1,0 +1,27 @@
+entries:
+  - key: family-preferences-quiz
+    kind: feature
+    title: Family preferences quiz
+    card_id: KAN-2026-0001
+    card_path: kanban/cards/KAN-2026-0001/card.md
+    owner: matt
+    status: discovery
+    artifacts:
+      - type: prd
+        path: product-development/product/PRDs/family-preferences-quiz.md
+      - type: analytics
+        path: product-development/analytics/investigations/family-preferences-quiz-baseline.md
+      - type: engineering-plan
+        path: product-development/engineering/plans/family-preferences-quiz.md
+  - key: allergy-filter-mismatch
+    kind: bug
+    title: Allergy filter mismatch
+    card_id: KAN-2026-0002
+    card_path: kanban/cards/KAN-2026-0002/card.md
+    owner: matt
+    status: blocked
+    artifacts:
+      - type: bug-investigation
+        path: product-development/engineering/bug-investigations/allergy-filter-mismatch.md
+      - type: analytics
+        path: product-development/analytics/investigations/allergy-filter-mismatch-support-patterns.md

@@ -1,0 +1,540 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0B8E627D0DE388241FF6AF52 /* RepoAccessGate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE91E889837E0D4B46FDA81E /* RepoAccessGate.swift */; };
+		0C890C78D4EB7011BDE04BA0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E634CDF533E15AE0C6BAAA95 /* Cocoa.framework */; };
+		193AD7FBB96C8C496E518389 /* TeamOSMacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAB92CA863BB9A44E882495 /* TeamOSMacApp.swift */; };
+		21FEE2EE52D324CC03FE5A58 /* GitHubProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A18A6A519B7FAC1C84CD612 /* GitHubProtocols.swift */; };
+		43A921B6A6F27F61B5C89F59 /* TeamOSMarkers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA3AB380B0F89696D8E6F74 /* TeamOSMarkers.swift */; };
+		4554042C38DD4846B490CCE2 /* BranchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A1B937BC9B427D577B2149 /* BranchSessionManager.swift */; };
+		476320890327DF37ADE02FC6 /* MutationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CF2CA3E033FA73CF2AD4F4 /* MutationModels.swift */; };
+		49EC9CE2C2905F7D2C85B551 /* TeamOSMarkers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6F041623CEFA053F00D04C /* TeamOSMarkers.swift */; };
+		4C2F75638349E6E0A8DB8D67 /* GitHubLiveServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B773DA99AA75109B40540A6 /* GitHubLiveServices.swift */; };
+		5798B8EDF84DA760DF8846A2 /* TeamOSModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E6587508BAD79870303093 /* TeamOSModels.swift */; };
+		62DC0055C89D31DF78B4A883 /* MutationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBD8EEAE1061F7C0ECD5217 /* MutationModels.swift */; };
+		66C65AA81D6B626C15637D6D /* TeamOSSampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75773D30D5C8C776C9002DA7 /* TeamOSSampleData.swift */; };
+		707920F6289E6BB6C52DC8D1 /* TeamOSiOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A1574D6F44E046D36A00FF /* TeamOSiOSApp.swift */; };
+		7C7D33601E918C9E50EB4195 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 399429219B2F6ABA773DAEAA /* Foundation.framework */; };
+		80A60382D7566C368DAFE212 /* TeamOSSampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170F8F935F0F3C0BCDDEF644 /* TeamOSSampleData.swift */; };
+		8C92AFC09DADFFD12F4CE71F /* PlaceholderGitHubServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DAEA40796D2AF912E75E52 /* PlaceholderGitHubServices.swift */; };
+		8E5D0F219EAA20870A77B2C6 /* GitHubLiveServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9CC536CECE3A831191296A /* GitHubLiveServices.swift */; };
+		9E4E144448BD9A52E6D8450B /* RepoAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E6D8B9B4B3E678AF5C827E /* RepoAccess.swift */; };
+		A6FEFB358B267AADD369D4E9 /* TeamOSWorkspaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F857E29C47F1610A0B123DA0 /* TeamOSWorkspaceModel.swift */; };
+		ACDCB57A6BA403658BF82F5F /* GitHubRESTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8183D0E761E9F09A63DED7E1 /* GitHubRESTClient.swift */; };
+		AEF834710C4F4BC9BA9054E3 /* TeamOSShellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945E22D19CD339B3578A544F /* TeamOSShellView.swift */; };
+		B03A28325C786299157620E0 /* GitHubProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A995592750C24548DE9849 /* GitHubProtocols.swift */; };
+		BF9AA1606AF5AB9BDBA237A3 /* RepoAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57A35F7C9DDBC01816137C6 /* RepoAccess.swift */; };
+		C4E468ABCB23B36DF08D42DD /* GitHubRESTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CC48DA51C75CCA066D6377 /* GitHubRESTClient.swift */; };
+		C6F0D74509F8CB8BA600B4C2 /* RepoAccessGate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8634728956C7C521E4E5D6E3 /* RepoAccessGate.swift */; };
+		CAE8E5927ED5E1AC2323E9FF /* PlaceholderGitHubServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B1CB32BA5F4449277E4D92 /* PlaceholderGitHubServices.swift */; };
+		D5F52A9FA75EF66343CCB5E4 /* TeamOSWorkspaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142110D44082A97A093BDA1A /* TeamOSWorkspaceModel.swift */; };
+		DD7B7A76EE9E0A0D98FEBA50 /* MutationPlanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD3D588855E75B0D93C24A7 /* MutationPlanner.swift */; };
+		EFCA98A78A4ECBEEB02BE4CF /* MutationPlanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D0F87DC07D614B75C406AA /* MutationPlanner.swift */; };
+		F341695F981E9066AA6FCC78 /* BranchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3860E5042140FA65E7EA52 /* BranchSessionManager.swift */; };
+		F35475F66AF7C91BDEBBBAEA /* TeamOSShellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6ADE6ABD9121737CC40E325 /* TeamOSShellView.swift */; };
+		F7E0C8553FFAEDE594E33505 /* TeamOSModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3947A2423085D859AF8525A /* TeamOSModels.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		01E6587508BAD79870303093 /* TeamOSModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TeamOSModels.swift; path = TeamOSCore/Sources/TeamOSCore/Models/TeamOSModels.swift; sourceTree = "<group>"; };
+		04A1B937BC9B427D577B2149 /* BranchSessionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BranchSessionManager.swift; path = TeamOSCore/Sources/TeamOSCore/Workflow/BranchSessionManager.swift; sourceTree = "<group>"; };
+		06B1CB32BA5F4449277E4D92 /* PlaceholderGitHubServices.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PlaceholderGitHubServices.swift; path = TeamOSCore/Sources/TeamOSCore/GitHub/PlaceholderGitHubServices.swift; sourceTree = "<group>"; };
+		142110D44082A97A093BDA1A /* TeamOSWorkspaceModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TeamOSWorkspaceModel.swift; path = AppShared/TeamOSWorkspaceModel.swift; sourceTree = "<group>"; };
+		170F8F935F0F3C0BCDDEF644 /* TeamOSSampleData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TeamOSSampleData.swift; path = AppShared/TeamOSSampleData.swift; sourceTree = "<group>"; };
+		1F6F041623CEFA053F00D04C /* TeamOSMarkers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TeamOSMarkers.swift; path = TeamOSCore/Sources/TeamOSCore/Parsing/TeamOSMarkers.swift; sourceTree = "<group>"; };
+		20D0F87DC07D614B75C406AA /* MutationPlanner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MutationPlanner.swift; path = TeamOSCore/Sources/TeamOSCore/Workflow/MutationPlanner.swift; sourceTree = "<group>"; };
+		24E6D8B9B4B3E678AF5C827E /* RepoAccess.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RepoAccess.swift; path = TeamOSCore/Sources/TeamOSCore/Models/RepoAccess.swift; sourceTree = "<group>"; };
+		25A995592750C24548DE9849 /* GitHubProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GitHubProtocols.swift; path = TeamOSCore/Sources/TeamOSCore/GitHub/GitHubProtocols.swift; sourceTree = "<group>"; };
+		27CC48DA51C75CCA066D6377 /* GitHubRESTClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GitHubRESTClient.swift; path = TeamOSCore/Sources/TeamOSCore/GitHub/GitHubRESTClient.swift; sourceTree = "<group>"; };
+		29C8E9A362194C059FACA741 /* TeamOSMacApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamOSMacApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EAB92CA863BB9A44E882495 /* TeamOSMacApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TeamOSMacApp.swift; path = TeamOSMacApp/TeamOSMacApp.swift; sourceTree = "<group>"; };
+		399429219B2F6ABA773DAEAA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3A18A6A519B7FAC1C84CD612 /* GitHubProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GitHubProtocols.swift; path = TeamOSCore/Sources/TeamOSCore/GitHub/GitHubProtocols.swift; sourceTree = "<group>"; };
+		4B773DA99AA75109B40540A6 /* GitHubLiveServices.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GitHubLiveServices.swift; path = TeamOSCore/Sources/TeamOSCore/GitHub/GitHubLiveServices.swift; sourceTree = "<group>"; };
+		4DBD8EEAE1061F7C0ECD5217 /* MutationModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MutationModels.swift; path = TeamOSCore/Sources/TeamOSCore/Models/MutationModels.swift; sourceTree = "<group>"; };
+		6B3860E5042140FA65E7EA52 /* BranchSessionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BranchSessionManager.swift; path = TeamOSCore/Sources/TeamOSCore/Workflow/BranchSessionManager.swift; sourceTree = "<group>"; };
+		6DA3AB380B0F89696D8E6F74 /* TeamOSMarkers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TeamOSMarkers.swift; path = TeamOSCore/Sources/TeamOSCore/Parsing/TeamOSMarkers.swift; sourceTree = "<group>"; };
+		71FABE03459CE6CC98F1DC88 /* TeamOSiOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamOSiOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		73CF2CA3E033FA73CF2AD4F4 /* MutationModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MutationModels.swift; path = TeamOSCore/Sources/TeamOSCore/Models/MutationModels.swift; sourceTree = "<group>"; };
+		75773D30D5C8C776C9002DA7 /* TeamOSSampleData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TeamOSSampleData.swift; path = AppShared/TeamOSSampleData.swift; sourceTree = "<group>"; };
+		7CD3D588855E75B0D93C24A7 /* MutationPlanner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MutationPlanner.swift; path = TeamOSCore/Sources/TeamOSCore/Workflow/MutationPlanner.swift; sourceTree = "<group>"; };
+		8183D0E761E9F09A63DED7E1 /* GitHubRESTClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GitHubRESTClient.swift; path = TeamOSCore/Sources/TeamOSCore/GitHub/GitHubRESTClient.swift; sourceTree = "<group>"; };
+		8634728956C7C521E4E5D6E3 /* RepoAccessGate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RepoAccessGate.swift; path = TeamOSCore/Sources/TeamOSCore/Workflow/RepoAccessGate.swift; sourceTree = "<group>"; };
+		945E22D19CD339B3578A544F /* TeamOSShellView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TeamOSShellView.swift; path = AppShared/TeamOSShellView.swift; sourceTree = "<group>"; };
+		B3947A2423085D859AF8525A /* TeamOSModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TeamOSModels.swift; path = TeamOSCore/Sources/TeamOSCore/Models/TeamOSModels.swift; sourceTree = "<group>"; };
+		BE91E889837E0D4B46FDA81E /* RepoAccessGate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RepoAccessGate.swift; path = TeamOSCore/Sources/TeamOSCore/Workflow/RepoAccessGate.swift; sourceTree = "<group>"; };
+		D5DAEA40796D2AF912E75E52 /* PlaceholderGitHubServices.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PlaceholderGitHubServices.swift; path = TeamOSCore/Sources/TeamOSCore/GitHub/PlaceholderGitHubServices.swift; sourceTree = "<group>"; };
+		D6ADE6ABD9121737CC40E325 /* TeamOSShellView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TeamOSShellView.swift; path = AppShared/TeamOSShellView.swift; sourceTree = "<group>"; };
+		E57A35F7C9DDBC01816137C6 /* RepoAccess.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RepoAccess.swift; path = TeamOSCore/Sources/TeamOSCore/Models/RepoAccess.swift; sourceTree = "<group>"; };
+		E634CDF533E15AE0C6BAAA95 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.0.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		EA9CC536CECE3A831191296A /* GitHubLiveServices.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GitHubLiveServices.swift; path = TeamOSCore/Sources/TeamOSCore/GitHub/GitHubLiveServices.swift; sourceTree = "<group>"; };
+		F4A1574D6F44E046D36A00FF /* TeamOSiOSApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TeamOSiOSApp.swift; path = TeamOSiOSApp/TeamOSiOSApp.swift; sourceTree = "<group>"; };
+		F857E29C47F1610A0B123DA0 /* TeamOSWorkspaceModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TeamOSWorkspaceModel.swift; path = AppShared/TeamOSWorkspaceModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		14345359A5425DF0E835814B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C7D33601E918C9E50EB4195 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A490E60D8F2ACA6F22E9F84 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C890C78D4EB7011BDE04BA0 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2BBD258F51FFBC25E88EADA6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6CF0FF692BBE3DD3E8F6EF61 /* OS X */,
+				E6EA1BCFD7F58A5D3F78408A /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		34F01381476ED35C2D8080CB /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				4B773DA99AA75109B40540A6 /* GitHubLiveServices.swift */,
+				3A18A6A519B7FAC1C84CD612 /* GitHubProtocols.swift */,
+				8183D0E761E9F09A63DED7E1 /* GitHubRESTClient.swift */,
+				06B1CB32BA5F4449277E4D92 /* PlaceholderGitHubServices.swift */,
+				4DBD8EEAE1061F7C0ECD5217 /* MutationModels.swift */,
+				24E6D8B9B4B3E678AF5C827E /* RepoAccess.swift */,
+				01E6587508BAD79870303093 /* TeamOSModels.swift */,
+				1F6F041623CEFA053F00D04C /* TeamOSMarkers.swift */,
+				04A1B937BC9B427D577B2149 /* BranchSessionManager.swift */,
+				7CD3D588855E75B0D93C24A7 /* MutationPlanner.swift */,
+				BE91E889837E0D4B46FDA81E /* RepoAccessGate.swift */,
+				75773D30D5C8C776C9002DA7 /* TeamOSSampleData.swift */,
+				945E22D19CD339B3578A544F /* TeamOSShellView.swift */,
+				142110D44082A97A093BDA1A /* TeamOSWorkspaceModel.swift */,
+				2EAB92CA863BB9A44E882495 /* TeamOSMacApp.swift */,
+				EA9CC536CECE3A831191296A /* GitHubLiveServices.swift */,
+				25A995592750C24548DE9849 /* GitHubProtocols.swift */,
+				27CC48DA51C75CCA066D6377 /* GitHubRESTClient.swift */,
+				D5DAEA40796D2AF912E75E52 /* PlaceholderGitHubServices.swift */,
+				73CF2CA3E033FA73CF2AD4F4 /* MutationModels.swift */,
+				E57A35F7C9DDBC01816137C6 /* RepoAccess.swift */,
+				B3947A2423085D859AF8525A /* TeamOSModels.swift */,
+				6DA3AB380B0F89696D8E6F74 /* TeamOSMarkers.swift */,
+				6B3860E5042140FA65E7EA52 /* BranchSessionManager.swift */,
+				20D0F87DC07D614B75C406AA /* MutationPlanner.swift */,
+				8634728956C7C521E4E5D6E3 /* RepoAccessGate.swift */,
+				170F8F935F0F3C0BCDDEF644 /* TeamOSSampleData.swift */,
+				D6ADE6ABD9121737CC40E325 /* TeamOSShellView.swift */,
+				F857E29C47F1610A0B123DA0 /* TeamOSWorkspaceModel.swift */,
+				F4A1574D6F44E046D36A00FF /* TeamOSiOSApp.swift */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		5D6A2E2310DDF3D6CDD77690 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				29C8E9A362194C059FACA741 /* TeamOSMacApp.app */,
+				71FABE03459CE6CC98F1DC88 /* TeamOSiOSApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6CF0FF692BBE3DD3E8F6EF61 /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				E634CDF533E15AE0C6BAAA95 /* Cocoa.framework */,
+			);
+			name = "OS X";
+			sourceTree = "<group>";
+		};
+		E6EA1BCFD7F58A5D3F78408A /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				399429219B2F6ABA773DAEAA /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		F895E57EA9C5E798DC450CF9 = {
+			isa = PBXGroup;
+			children = (
+				5D6A2E2310DDF3D6CDD77690 /* Products */,
+				2BBD258F51FFBC25E88EADA6 /* Frameworks */,
+				34F01381476ED35C2D8080CB /* Sources */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		52B6DDD4F196C6CC1EF55F46 /* TeamOSMacApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC2F1284F079609F4A309BF6 /* Build configuration list for PBXNativeTarget "TeamOSMacApp" */;
+			buildPhases = (
+				153E540D0DED77308E32A961 /* Sources */,
+				7A490E60D8F2ACA6F22E9F84 /* Frameworks */,
+				A795A79E56E192E250E5C29F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TeamOSMacApp;
+			productName = TeamOSMacApp;
+			productReference = 29C8E9A362194C059FACA741 /* TeamOSMacApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6A178EE88C36567D16672AAA /* TeamOSiOSApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCBE79B9572B73DA7F255B78 /* Build configuration list for PBXNativeTarget "TeamOSiOSApp" */;
+			buildPhases = (
+				5DFC46E1936BF10B884CA006 /* Sources */,
+				14345359A5425DF0E835814B /* Frameworks */,
+				D178E46D7102AB668C0F819C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TeamOSiOSApp;
+			productName = TeamOSiOSApp;
+			productReference = 71FABE03459CE6CC98F1DC88 /* TeamOSiOSApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0A2B7C53E89EDA1BAAD78D5D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 2640;
+			};
+			buildConfigurationList = 60DDC925102D1E7A9FEA13F6 /* Build configuration list for PBXProject "TeamOSApps" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F895E57EA9C5E798DC450CF9;
+			minimizedProjectReferenceProxies = 0;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 5D6A2E2310DDF3D6CDD77690 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				52B6DDD4F196C6CC1EF55F46 /* TeamOSMacApp */,
+				6A178EE88C36567D16672AAA /* TeamOSiOSApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A795A79E56E192E250E5C29F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D178E46D7102AB668C0F819C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		153E540D0DED77308E32A961 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C2F75638349E6E0A8DB8D67 /* GitHubLiveServices.swift in Sources */,
+				21FEE2EE52D324CC03FE5A58 /* GitHubProtocols.swift in Sources */,
+				ACDCB57A6BA403658BF82F5F /* GitHubRESTClient.swift in Sources */,
+				CAE8E5927ED5E1AC2323E9FF /* PlaceholderGitHubServices.swift in Sources */,
+				62DC0055C89D31DF78B4A883 /* MutationModels.swift in Sources */,
+				9E4E144448BD9A52E6D8450B /* RepoAccess.swift in Sources */,
+				5798B8EDF84DA760DF8846A2 /* TeamOSModels.swift in Sources */,
+				49EC9CE2C2905F7D2C85B551 /* TeamOSMarkers.swift in Sources */,
+				4554042C38DD4846B490CCE2 /* BranchSessionManager.swift in Sources */,
+				DD7B7A76EE9E0A0D98FEBA50 /* MutationPlanner.swift in Sources */,
+				0B8E627D0DE388241FF6AF52 /* RepoAccessGate.swift in Sources */,
+				66C65AA81D6B626C15637D6D /* TeamOSSampleData.swift in Sources */,
+				AEF834710C4F4BC9BA9054E3 /* TeamOSShellView.swift in Sources */,
+				D5F52A9FA75EF66343CCB5E4 /* TeamOSWorkspaceModel.swift in Sources */,
+				193AD7FBB96C8C496E518389 /* TeamOSMacApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DFC46E1936BF10B884CA006 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E5D0F219EAA20870A77B2C6 /* GitHubLiveServices.swift in Sources */,
+				B03A28325C786299157620E0 /* GitHubProtocols.swift in Sources */,
+				C4E468ABCB23B36DF08D42DD /* GitHubRESTClient.swift in Sources */,
+				8C92AFC09DADFFD12F4CE71F /* PlaceholderGitHubServices.swift in Sources */,
+				476320890327DF37ADE02FC6 /* MutationModels.swift in Sources */,
+				BF9AA1606AF5AB9BDBA237A3 /* RepoAccess.swift in Sources */,
+				F7E0C8553FFAEDE594E33505 /* TeamOSModels.swift in Sources */,
+				43A921B6A6F27F61B5C89F59 /* TeamOSMarkers.swift in Sources */,
+				F341695F981E9066AA6FCC78 /* BranchSessionManager.swift in Sources */,
+				EFCA98A78A4ECBEEB02BE4CF /* MutationPlanner.swift in Sources */,
+				C6F0D74509F8CB8BA600B4C2 /* RepoAccessGate.swift in Sources */,
+				80A60382D7566C368DAFE212 /* TeamOSSampleData.swift in Sources */,
+				F35475F66AF7C91BDEBBBAEA /* TeamOSShellView.swift in Sources */,
+				A6FEFB358B267AADD369D4E9 /* TeamOSWorkspaceModel.swift in Sources */,
+				707920F6289E6BB6C52DC8D1 /* TeamOSiOSApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		04C1ECABEB2749DB50BD3708 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		1870DDE39E29D3A2993B2797 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.teamos.TeamOSiOSApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7201472905BE3DAD5801E126 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.teamos.TeamOSMacApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		73672E237321C4D17E01407E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		7D37A39E34A98CDAA4B7D9F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.teamos.TeamOSMacApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		8684B00EBCD356AB7E419082 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.teamos.TeamOSiOSApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		60DDC925102D1E7A9FEA13F6 /* Build configuration list for PBXProject "TeamOSApps" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73672E237321C4D17E01407E /* Debug */,
+				04C1ECABEB2749DB50BD3708 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC2F1284F079609F4A309BF6 /* Build configuration list for PBXNativeTarget "TeamOSMacApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7201472905BE3DAD5801E126 /* Release */,
+				7D37A39E34A98CDAA4B7D9F7 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCBE79B9572B73DA7F255B78 /* Build configuration list for PBXNativeTarget "TeamOSiOSApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1870DDE39E29D3A2993B2797 /* Release */,
+				8684B00EBCD356AB7E419082 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0A2B7C53E89EDA1BAAD78D5D /* Project object */;
+}

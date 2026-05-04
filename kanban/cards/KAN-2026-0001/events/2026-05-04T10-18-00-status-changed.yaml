@@ -1,0 +1,7 @@
+timestamp: 2026-05-04T10:18:00Z
+type: status-changed
+actor: matt
+card_id: KAN-2026-0001
+from_status: intake
+status: discovery
+summary: Promoted to discovery after confirming repeated customer evidence.

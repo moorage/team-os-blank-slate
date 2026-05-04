@@ -1,0 +1,23 @@
+id: launch
+name: Launch readiness
+description: Launch work that spans comms, readiness, and review.
+card_types:
+  - feature
+  - experiment
+columns:
+  - id: planning
+    label: Planning
+  - id: readying
+    label: Readying
+    wip_limit: 3
+  - id: launched
+    label: Launched
+  - id: reviewed
+    label: Reviewed
+done_rules:
+  launched:
+    required_artifact_types:
+      - launch-readiness
+  reviewed:
+    required_artifact_types:
+      - post-launch-review

@@ -1,0 +1,4 @@
+.build
+DerivedData
+TeamOSApps.xcodeproj/project.xcworkspace/xcuserdata
+*.xcuserstate

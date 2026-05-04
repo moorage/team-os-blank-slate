@@ -1,0 +1,33 @@
+id: product-dev
+name: Product development
+description: Feature and experiment work from intake through ship.
+card_types:
+  - feature
+  - experiment
+columns:
+  - id: intake
+    label: Intake
+  - id: discovery
+    label: Discovery
+    wip_limit: 4
+  - id: definition
+    label: Definition
+    wip_limit: 4
+  - id: delivery
+    label: Delivery
+    wip_limit: 5
+  - id: validation
+    label: Validation
+    wip_limit: 3
+  - id: shipped
+    label: Shipped
+done_rules:
+  validation:
+    required_artifact_types:
+      - prd
+      - analytics
+  shipped:
+    required_artifact_types:
+      - prd
+      - launch-readiness
+      - post-launch-review

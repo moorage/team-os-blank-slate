@@ -5,6 +5,11 @@ Start here. Use this file as the map of what is real today and how to extend it 
 
 ## Repository shape
 
+- `kanban/` is the workflow source of truth. Cards stay in stable directories and state transitions are recorded as append-only events.
+- `product-development/` stores durable product context linked from kanban cards.
+- `apps/native/` stores Swift-native architecture and mutation-planning code for future macOS and iOS clients.
+- `.agents/skills/` stores repeatable Codex workflows for Team OS maintenance.
+
 ## First reads
 Before non-trivial work, read in this order:
 
@@ -59,6 +64,8 @@ Before non-trivial work, read in this order:
 - architecture map: `docs/ARCHITECTURE.md`
 - execution-plan standard: `docs/PLANS.md`
 - ideation backlog and prioritization rules: `docs/ideas/`
+- Team OS workflow state: `kanban/`
+- Team OS product context: `product-development/`
 - security rules: `docs/SECURITY.md`
 - reliability rules: `docs/RELIABILITY.md`
 - quality ledger and debt register: `docs/QUALITY_LEDGER.md`
@@ -72,6 +79,7 @@ Before non-trivial work, read in this order:
 - quality-gc refreshes the quality timestamp and repo map on a schedule
 - the ideation backlog can be validated directly with `npm run verify:ideas`
 - active ExecPlans can be validated directly with `npm run verify:execplan`
+- Team OS validation and rendered views can be regenerated with `npm run team-os:validate` and `npm run team-os:render`
 - if a workflow repeats twice, convert it into a skill under `.agents/skills/`
 
 ## Codex surfaces
