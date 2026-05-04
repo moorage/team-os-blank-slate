@@ -1,13 +1,32 @@
+# JavaScript / TypeScript
 node_modules
 coverage
 *.tsbuildinfo
 dist
+
+# Local environment and secrets
 .env*
 .env.sh
+client_secret.apps.googleusercontent.com.json
+
+# Browser and sandbox tooling
 .pw-browsers
 seccomp_profile.json
+
+# Local outputs
 artifacts/
+tmp/
+
+# Python
 __pycache__/
 *.pyc
-client_secret.apps.googleusercontent.com.json
-tmp/
+
+# macOS
+.DS_Store
+
+# Swift / Xcode
+.build/
+.swiftpm/
+DerivedData/
+*.xcodeproj/project.xcworkspace/xcuserdata/
+*.xcuserstate
