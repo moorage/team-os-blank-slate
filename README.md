@@ -37,6 +37,18 @@ npm run hooks:install
 npm --prefix kanban/scripts install
 ```
 
+Bootstrap a fresh Team OS copy into a new folder:
+
+```sh
+./install.sh my-team-os
+```
+
+Or fetch and run the installer directly from GitHub:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/moorage/team-os-blank-slate/main/install.sh | bash -s -- my-team-os
+```
+
 Regenerate the checked-in Xcode project after target changes:
 
 ```sh

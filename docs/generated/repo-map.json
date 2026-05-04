@@ -32185,6 +32185,10 @@
       ]
     },
     {
+      "type": "file",
+      "name": "install.sh"
+    },
+    {
       "type": "dir",
       "name": "kanban",
       "children": [
