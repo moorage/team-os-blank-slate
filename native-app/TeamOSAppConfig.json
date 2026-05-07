@@ -1,0 +1,17 @@
+{
+  "bundleIdentifiers": {
+    "macOS": "com.teamos.TeamOSMacApp",
+    "iOS": "com.teamos.TeamOSiOSApp"
+  },
+  "defaultRepository": {
+    "owner": "team-os",
+    "name": "blank-slate"
+  },
+  "userDefaultsKeyPrefix": "com.teamos.blank-slate",
+  "gitHubKeychainService": "com.teamos.blank-slate.github-app",
+  "gitHubApp": {
+    "appName": "Team OS Blank Slate",
+    "clientID": "",
+    "appSlug": ""
+  }
+}

@@ -34,11 +34,13 @@ Threats:
 
 Controls:
 
+- `apps/native/` is a shared submodule checkout, while tenant-owned native settings stay outside it in `native-app/TeamOSAppConfig.json`
 - repo-access gating types in `apps/native/TeamOSCore`
 - transport-injected GitHub REST client and live services in `apps/native/TeamOSCore`
 - branch-session, mutation-planning, and pull-request types in `apps/native/TeamOSCore`
+- local canonical mutation bridging through `apps/native/TeamOSCore/Sources/TeamOSCore/Workflow/LocalTeamOSRepositoryBridge.swift`, which invokes the Team OS CLI with structured arguments instead of interpolated shell strings
 - Team OS marker inspection before any write-ready state is exposed
-- explicit documentation in `docs/NATIVE_APPS.md` and `apps/native/README.md`
+- explicit documentation in `docs/NATIVE_APPS.md`, `apps/native/README.md`, and `native-app/TeamOSAppConfig.json`
 
 ### Team directory
 
@@ -46,19 +48,22 @@ Threats:
 
 - private personal contact data committed without clear repository need
 - invented or stale handles causing misrouting across Slack, GitHub, or other platforms
+- profile image URLs that leak secrets, signed parameters, or private endpoints
 - cards duplicating contact data instead of pointing to one canonical roster
 
 Controls:
 
 - `team/AGENTS.md` requires business-scoped, non-invented roster data
 - `team/people/index.yaml` is the canonical directory for current person and alias identifiers
+- `team/people/*.yaml` should use only public HTTPS `profile_image_url` values with no tokens, signed query strings, or private image hosts on `person` records; `functional-alias` records should prefer canonical emoji instead of remote image URLs
 - cards and artifacts should reference stable roster keys rather than embedding handle data inline
 
 ## Secrets and credentials
 
 - do not store GitHub tokens, app secrets, or private keys in Team OS files
 - do not store personal private contact details in `team/people/**` unless the repository explicitly needs them and the value is meant to be committed
-- the current app targets accept a development PAT in memory only and do not persist it to disk
+- the native app commits only public GitHub App metadata in `native-app/TeamOSAppConfig.json`; GitHub App client secrets and private keys stay outside git
+- the native app may store user-scoped GitHub App sessions in platform secure storage, but not in Team OS files or plain checked-in config
 - live GitHub services must authenticate and inspect repository permissions before reporting `RepoAccessStatus.writeReady`
 - use repo-relative links to durable artifacts instead of pasting secret-bearing URLs or payloads into cards
 

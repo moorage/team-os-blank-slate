@@ -1,0 +1,3 @@
+[submodule "apps/native"]
+	path = apps/native
+	url = git@github.com:moorage/team-os-native-apps.git
