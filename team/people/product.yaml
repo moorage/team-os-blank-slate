@@ -3,6 +3,7 @@ kind: functional-alias
 display_name: Product
 status: active
 summary: Functional assignee alias referenced by the sample product card.
+emoji: 🧭
 handles: {}
 references:
   - kanban/cards/KAN-2026-0001/card.md

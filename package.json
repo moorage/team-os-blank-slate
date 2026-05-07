@@ -13,7 +13,7 @@
     "verify:ideas": "python3 scripts/check_ideation.py",
     "verify:docs": "python3 scripts/knowledge/check_docs.py",
     "verify:execplan": "python3 scripts/check_execplan.py",
-    "knowledge:refresh": "python3 scripts/knowledge/generate_repo_map.py && python3 scripts/knowledge/update_quality_ledger.py",
+    "knowledge:refresh": "python3 scripts/knowledge/update_quality_ledger.py",
     "knowledge:suggest": "python3 scripts/knowledge/suggest_doc_updates.py",
     "lint": "node scripts/smoke/not-implemented.mjs lint",
     "typecheck": "npm run team-os:typecheck",

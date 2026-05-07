@@ -1,0 +1,7 @@
+actor: moorage
+card_id: KAN-2026-0001
+from_status: discovery
+status: validation
+summary: Moved from discovery to validation from the native Team OS app.
+timestamp: 2026-05-06T00:03:27Z
+type: status-changed

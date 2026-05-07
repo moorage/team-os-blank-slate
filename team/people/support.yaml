@@ -3,6 +3,7 @@ kind: functional-alias
 display_name: Support
 status: active
 summary: Functional watcher alias referenced by the sample bug card.
+emoji: 🎧
 handles: {}
 references:
   - kanban/cards/KAN-2026-0002/card.md

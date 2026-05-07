@@ -1,26 +1,32 @@
-id: product-dev
-name: Product development
-description: Feature and experiment work from intake through ship.
 card_types:
   - feature
   - experiment
 columns:
   - id: intake
     label: Intake
+    emoji: 🌱
   - id: discovery
     label: Discovery
+    emoji: 🔍
     wip_limit: 4
   - id: definition
     label: Definition
+    emoji: 📝
     wip_limit: 4
   - id: delivery
     label: Delivery
+    emoji: 🛠️
     wip_limit: 5
   - id: validation
     label: Validation
+    emoji: ✅
+    light_background_hex: "#00D200"
     wip_limit: 3
   - id: shipped
     label: Shipped
+    emoji: 🚀
+    light_background_hex: "#00D12E"
+description: Feature and experiment work from intake through ship.
 done_rules:
   validation:
     required_artifact_types:
@@ -31,3 +37,6 @@ done_rules:
       - prd
       - launch-readiness
       - post-launch-review
+id: product-dev
+name: Product development
+emoji: 🧰

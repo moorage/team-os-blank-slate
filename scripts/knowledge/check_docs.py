@@ -33,9 +33,6 @@ completed_dir = ROOT / "docs" / "exec-plans" / "completed"
 active_dir.mkdir(parents=True, exist_ok=True)
 completed_dir.mkdir(parents=True, exist_ok=True)
 
-generated = ROOT / "docs" / "generated"
-generated.mkdir(parents=True, exist_ok=True)
-
 validator = ROOT / "scripts" / "check_execplan.py"
 if not validator.exists():
     fail("Missing required file: scripts/check_execplan.py")

@@ -6,10 +6,32 @@ const NonEmptyStringSchema = z.string().trim().min(1);
 const NullableStringSchema = z.string().trim().min(1).nullish().transform((value) => value ?? null);
 const StringListSchema = z.array(NonEmptyStringSchema).default([]);
 const StatusNameSchema = z.string().trim().regex(/^[a-z0-9-]+$/);
+export const HexColorSchema = z
+  .string()
+  .trim()
+  .regex(/^#[0-9A-Fa-f]{6}$/, "Expected a hex color like #D97706.");
+const EmojiGraphemeSegmenter = new Intl.Segmenter("en", { granularity: "grapheme" });
 const IsoTimestampSchema = z.preprocess(
   normalizeIsoTimestamp,
   z.string().refine(isIsoTimestamp, "Expected an ISO timestamp like 2026-05-04T10:18:00Z."),
 );
+
+function isSingleEmojiGrapheme(value: string): boolean {
+  const trimmed = value.trim();
+  if (trimmed.length === 0) {
+    return false;
+  }
+
+  const graphemes = [...EmojiGraphemeSegmenter.segment(trimmed)];
+  return graphemes.length === 1 && /\p{Extended_Pictographic}/u.test(trimmed);
+}
+
+export const EmojiSchema = z
+  .string()
+  .trim()
+  .refine(isSingleEmojiGrapheme, "Expected a single emoji grapheme such as ✨ or 🐛.")
+;
+export const OptionalEmojiSchema = EmojiSchema.nullish().transform((value) => value ?? null);
 
 export const CardTypeSchema = z.enum(["feature", "bug", "experiment", "incident"]);
 export const PrioritySchema = z.enum(["low", "medium", "high", "urgent"]);
@@ -42,9 +64,11 @@ export const ArtifactLinkSchema = z.object({
 export const CardFrontmatterSchema = z.object({
   id: z.string().regex(/^KAN-\d{4}-\d{4}$/),
   title: NonEmptyStringSchema,
+  emoji: OptionalEmojiSchema,
   type: CardTypeSchema,
   board: StatusNameSchema,
   status: StatusNameSchema,
+  column_order: z.number().int().positive(),
   priority: PrioritySchema,
   severity: SeveritySchema.nullish().transform((value) => value ?? null),
   owner: NonEmptyStringSchema,
@@ -63,11 +87,26 @@ export const CardFrontmatterSchema = z.object({
   artifacts: z.array(ArtifactLinkSchema).default([]),
 });
 
-export const BoardColumnSchema = z.object({
+export const BoardColumnSchema = z.preprocess((value) => {
+  if (typeof value !== "object" || value === null || Array.isArray(value)) {
+    return value;
+  }
+
+  const candidate = value as Record<string, unknown>;
+  const legacyBackgroundHex = candidate.background_hex;
+  return {
+    ...candidate,
+    light_background_hex: candidate.light_background_hex ?? legacyBackgroundHex ?? null,
+    dark_background_hex: candidate.dark_background_hex ?? legacyBackgroundHex ?? null,
+  };
+}, z.object({
   id: StatusNameSchema,
   label: NonEmptyStringSchema,
+  emoji: OptionalEmojiSchema,
+  light_background_hex: HexColorSchema.nullish().transform((value) => value ?? null),
+  dark_background_hex: HexColorSchema.nullish().transform((value) => value ?? null),
   wip_limit: z.number().int().positive().optional(),
-});
+}));
 
 export const DoneRuleSchema = z.object({
   required_artifact_types: z.array(ArtifactTypeSchema).default([]),
@@ -76,6 +115,7 @@ export const DoneRuleSchema = z.object({
 export const BoardSchema = z.object({
   id: StatusNameSchema,
   name: NonEmptyStringSchema,
+  emoji: OptionalEmojiSchema.nullish().transform((value) => value ?? null),
   description: NonEmptyStringSchema,
   card_types: z.array(CardTypeSchema).min(1),
   columns: z.array(BoardColumnSchema).min(1),
@@ -138,6 +178,18 @@ export const TeamDirectoryIndexSchema = z.object({
   entries: z.array(TeamDirectoryEntrySchema).default([]),
 });
 
+export const TeamDirectoryRecordSchema = z.object({
+  id: NonEmptyStringSchema,
+  kind: z.enum(["person", "functional-alias"]),
+  display_name: NonEmptyStringSchema,
+  status: NullableStringSchema,
+  summary: NullableStringSchema,
+  emoji: OptionalEmojiSchema,
+  profile_image_url: NullableStringSchema,
+  handles: z.record(z.string(), NonEmptyStringSchema).default({}),
+  references: z.array(NonEmptyStringSchema).default([]),
+});
+
 export type ArtifactLink = z.infer<typeof ArtifactLinkSchema>;
 export type CardFrontmatter = z.infer<typeof CardFrontmatterSchema>;
 export type BoardColumn = z.infer<typeof BoardColumnSchema>;
@@ -147,6 +199,7 @@ export type CommentFrontmatter = z.infer<typeof CommentFrontmatterSchema>;
 export type FeatureIndex = z.infer<typeof FeatureIndexSchema>;
 export type FeatureIndexEntry = z.infer<typeof FeatureIndexEntrySchema>;
 export type TeamDirectoryIndex = z.infer<typeof TeamDirectoryIndexSchema>;
+export type TeamDirectoryRecord = z.infer<typeof TeamDirectoryRecordSchema>;
 
 export type EventRecord = EventRecordData & { path: string };
 export type CommentRecord = CommentFrontmatter & { path: string; body: string };

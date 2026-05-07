@@ -3,6 +3,7 @@ kind: functional-alias
 display_name: Backend Engineering
 status: active
 summary: Functional routing alias used for backend bug ownership and blocker resolution in the sample Team OS cards.
+emoji: 🧱
 handles: {}
 references:
   - kanban/cards/KAN-2026-0002/card.md

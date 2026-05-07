@@ -1,0 +1,7 @@
+actor: moorage
+card_id: KAN-2026-0001
+from_status: definition
+status: discovery
+summary: Moved from definition to discovery from the native Team OS app.
+timestamp: 2026-05-05T14:29:38Z
+type: status-changed

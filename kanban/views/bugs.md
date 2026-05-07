@@ -1,27 +1,27 @@
-# Bugs
+# 🚨 Bugs
 
 Generated from canonical card state.
 
-## Triage
+## 🐛 Triage
 
 No cards.
 
-## Investigating
+## 🔍 Investigating
 
 No cards.
 
-## Fixing
+## 🛠️ Fixing
+
+- KAN-2026-0002 — 🐛 Allergy filter mismatch | priority urgent | owner matt | assignees backend-eng | sitting with backend-eng | age 2d
+
+## ⚠️ Blocked
 
 No cards.
 
-## Blocked
-
-- KAN-2026-0002 — Allergy filter mismatch | priority urgent | owner matt | assignees backend-eng | sitting with backend-eng | age 0d
-
-## Validating
+## 🧪 Validating
 
 No cards.
 
-## Resolved
+## ✅ Resolved
 
 No cards.

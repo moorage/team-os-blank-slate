@@ -1,0 +1,7 @@
+actor: moorage
+card_id: KAN-2026-0001
+from_status: delivery
+status: definition
+summary: Moved from delivery to definition from the native Team OS app.
+timestamp: 2026-05-05T23:37:41Z
+type: status-changed

@@ -3,6 +3,7 @@ kind: functional-alias
 display_name: Analytics
 status: active
 summary: Functional routing alias used for analytics ownership and sitting_with state in the sample Team OS cards.
+emoji: 📈
 handles: {}
 references:
   - kanban/cards/KAN-2026-0001/card.md

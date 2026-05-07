@@ -2,8 +2,11 @@ id: matt
 kind: person
 display_name: Matt
 status: active
-summary: Primary human owner referenced by the current sample Team OS cards and feature index entries.
-handles: {}
+summary: Primary human owner referenced by the current sample Team OS cards and
+  feature index entries.
+profile_image_url: https://media.licdn.com/dms/image/v2/D5603AQH_UOxhhZNASg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1665784438627?e=1779926400&v=beta&t=o4tDrfLLqexc9cEZEDTeeq0m4IDwFE11j6qIQRcYrAE
+handles:
+  github: moorage
 references:
   - kanban/cards/KAN-2026-0001/card.md
   - kanban/cards/KAN-2026-0002/card.md

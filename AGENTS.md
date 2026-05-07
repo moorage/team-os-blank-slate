@@ -77,8 +77,8 @@ Before non-trivial work, read in this order:
 - implementation log: `docs/IMPLEMENTATION_LOG.md`
 
 ## Automatic maintenance
-- knowledge-base CI validates required docs and the generated repo map
-- quality-gc refreshes the quality timestamp and repo map on a schedule
+- knowledge-base CI validates required docs
+- quality-gc refreshes the quality timestamp on a schedule
 - the ideation backlog can be validated directly with `npm run verify:ideas`
 - active ExecPlans can be validated directly with `npm run verify:execplan`
 - Team OS validation and rendered views can be regenerated with `npm run team-os:validate` and `npm run team-os:render`

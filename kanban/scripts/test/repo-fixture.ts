@@ -1,4 +1,4 @@
-import { cp, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
+import { cp, mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -18,7 +18,9 @@ export async function readFixtureFile(root: string, relativePath: string): Promi
 }
 
 export async function writeFixtureFile(root: string, relativePath: string, contents: string): Promise<void> {
-  await writeFile(path.join(root, relativePath), contents, "utf8");
+  const targetPath = path.join(root, relativePath);
+  await mkdir(path.dirname(targetPath), { recursive: true });
+  await writeFile(targetPath, contents, "utf8");
 }
 
 export async function disposeFixtureRepo(root: string): Promise<void> {

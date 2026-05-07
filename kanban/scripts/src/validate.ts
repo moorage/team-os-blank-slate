@@ -17,6 +17,11 @@ type ValidationResult = {
 };
 
 type ArtifactType = CardRecord["frontmatter"]["artifacts"][number]["type"];
+type ColumnOrderEntry = {
+  cardID: string;
+  order: number;
+  path: string;
+};
 
 const STATUS_EVENT_TYPES = new Set(["created", "status-changed", "blocked", "unblocked"]);
 const SITTING_EVENT_TYPES = new Set(["sitting-with-changed", "blocked", "unblocked"]);
@@ -74,10 +79,7 @@ async function writeValidationReport(root: string, errors: ValidationIssue[]): P
   return reportPath;
 }
 
-export async function validateRepository(
-  root: string,
-  options: { writeReportOnly?: boolean } = {},
-): Promise<ValidationResult> {
+export async function collectValidationIssues(root: string): Promise<ValidationIssue[]> {
   const { boards, cards, featureIndex, teamDirectory, issues } = await loadRepositorySafely(root);
   const errors: ValidationIssue[] = issues.map((issue) => ({
     code: `malformed-${issue.kind}`,
@@ -90,6 +92,7 @@ export async function validateRepository(
   const teamDirectoryKeys = new Set(teamDirectory.entries.map((entry) => entry.key));
   const counts = new Map<string, number>();
   const cardIds = new Map<string, string[]>();
+  const columnOrders = new Map<string, ColumnOrderEntry[]>();
 
   for (const card of cards) {
     const relCardPath = relativePath(root, card.path);
@@ -135,7 +138,8 @@ export async function validateRepository(
       });
     }
 
-    if (!board.columns.some((column) => column.id === frontmatter.status)) {
+    const hasKnownStatus = board.columns.some((column) => column.id === frontmatter.status);
+    if (!hasKnownStatus) {
       errors.push({
         code: "unknown-status",
         message: `Status ${frontmatter.status} is not defined on board ${board.id}.`,
@@ -222,6 +226,15 @@ export async function validateRepository(
 
     const columnKey = `${board.id}:${frontmatter.status}`;
     counts.set(columnKey, (counts.get(columnKey) ?? 0) + 1);
+    if (hasKnownStatus) {
+      const entries = columnOrders.get(columnKey) ?? [];
+      entries.push({
+        cardID: frontmatter.id,
+        order: frontmatter.column_order,
+        path: relCardPath,
+      });
+      columnOrders.set(columnKey, entries);
+    }
   }
 
   for (const [cardId, occurrences] of cardIds.entries()) {
@@ -237,11 +250,63 @@ export async function validateRepository(
   }
 
   for (const board of boards) {
+    const seenColumnIDs = new Set<string>();
     for (const column of board.columns) {
+      if (seenColumnIDs.has(column.id)) {
+        errors.push({
+          code: "duplicate-board-column-id",
+          message: `Board ${board.id} defines column ${column.id} more than once.`,
+          path: `kanban/boards/${board.id}.board.yaml`,
+        });
+      } else {
+        seenColumnIDs.add(column.id);
+      }
+
+      const columnKey = `${board.id}:${column.id}`;
+      const entries = columnOrders.get(columnKey) ?? [];
+      const duplicateGroups = new Map<number, ColumnOrderEntry[]>();
+      for (const entry of entries) {
+        duplicateGroups.set(entry.order, [...(duplicateGroups.get(entry.order) ?? []), entry]);
+      }
+      let hasDuplicateOrders = false;
+      for (const [order, group] of duplicateGroups.entries()) {
+        if (group.length < 2) {
+          continue;
+        }
+        hasDuplicateOrders = true;
+        const conflictingCards = group.map((entry) => entry.cardID).join(", ");
+        for (const entry of group) {
+          errors.push({
+            code: "duplicate-column-order",
+            message: `Column order ${order} is duplicated in status ${column.id} on board ${board.id}. Conflicting cards: ${conflictingCards}.`,
+            path: entry.path,
+          });
+        }
+      }
+      if (!hasDuplicateOrders && entries.length > 0) {
+        const actualOrders = entries
+          .map((entry) => entry.order)
+          .slice()
+          .sort((left, right) => left - right);
+        const expectedOrders = Array.from({ length: entries.length }, (_, index) => index + 1);
+        const isContiguous = actualOrders.every((order, index) => order === expectedOrders[index]);
+        if (!isContiguous) {
+          const reportPath = entries
+            .slice()
+            .sort((left, right) => left.order - right.order || left.cardID.localeCompare(right.cardID))[0]?.path
+            ?? `kanban/boards/${board.id}.board.yaml`;
+          errors.push({
+            code: "noncontiguous-column-order",
+            message: `Status ${column.id} on board ${board.id} must use contiguous column_order values starting at 1. Found ${actualOrders.join(", ")}.`,
+            path: reportPath,
+          });
+        }
+      }
+
       if (!column.wip_limit) {
         continue;
       }
-      const count = counts.get(`${board.id}:${column.id}`) ?? 0;
+      const count = counts.get(columnKey) ?? 0;
       if (count > column.wip_limit) {
         errors.push({
           code: "wip-limit-exceeded",
@@ -260,6 +325,14 @@ export async function validateRepository(
     return left.code.localeCompare(right.code);
   });
 
+  return errors;
+}
+
+export async function validateRepository(
+  root: string,
+  options: { writeReportOnly?: boolean } = {},
+): Promise<ValidationResult> {
+  const errors = await collectValidationIssues(root);
   const reportPath = await writeValidationReport(root, errors);
   if (!options.writeReportOnly && errors.length > 0) {
     throw new Error(`Validation failed with ${errors.length} error(s). See ${relativePath(root, reportPath)}.`);

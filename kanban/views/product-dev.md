@@ -1,27 +1,27 @@
-# Product development
+# 🧰 Product development
 
 Generated from canonical card state.
 
-## Intake
+## 🌱 Intake
 
 No cards.
 
-## Discovery
-
-- KAN-2026-0001 — Family preferences quiz | priority high | owner matt | assignees product, analytics | sitting with analytics | age 0d
-
-## Definition
+## 🔍 Discovery
 
 No cards.
 
-## Delivery
+## 📝 Definition
 
 No cards.
 
-## Validation
+## 🛠️ Delivery
 
 No cards.
 
-## Shipped
+## ✅ Validation · light #00D200
+
+- KAN-2026-0001 — ✨ Family preferences quiz | priority high | owner matt | assignees product, analytics | sitting with backend-eng | age 2d
+
+## 🚀 Shipped · light #00D12E
 
 No cards.

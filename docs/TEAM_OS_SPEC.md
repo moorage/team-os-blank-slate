@@ -23,4 +23,5 @@ Team OS stores product workflow state, durable context, and team identity togeth
 - history is append-only
 - comments are first-class files
 - every important card should link to durable artifacts
-- native apps are Git and pull-request frontends, not a second datastore
+- team identity records may include optional public profile-image URLs for people and optional canonical emoji for functional aliases, but private or secret-bearing media references do not belong in the repo
+- native apps are Git and pull-request frontends, not a second datastore, and canonical native mutations should flow through the Team OS CLI bridge instead of rewriting markdown rules separately

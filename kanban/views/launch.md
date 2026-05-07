@@ -1,19 +1,19 @@
-# Launch readiness
+# 🚀 Launch readiness
 
 Generated from canonical card state.
 
-## Planning
+## 🧭 Planning
 
 No cards.
 
-## Readying
+## 📣 Readying
 
 No cards.
 
-## Launched
+## 🚀 Launched
 
 No cards.
 
-## Reviewed
+## 🧾 Reviewed
 
 No cards.

@@ -1,0 +1,7 @@
+actor: moorage
+card_id: KAN-2026-0002
+from_status: fixing
+status: blocked
+summary: Moved from fixing to blocked from the native Team OS app.
+timestamp: 2026-05-05T06:42:51Z
+type: status-changed

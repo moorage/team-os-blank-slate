@@ -1,0 +1,11 @@
+actor: moorage
+card_id: KAN-2026-0001
+from_sitting_with: analytics
+sitting_expected_action: Attach funnel baseline findings and highlight which
+  question sequence looks most promising.
+sitting_reason: Waiting on a baseline funnel read before definition work starts.
+sitting_since: 2026-05-06T14:45:34.583Z
+sitting_with: backend-eng
+summary: Handed the next action to backend-eng from the native Team OS app.
+timestamp: 2026-05-06T14:45:34.583Z
+type: sitting-with-changed

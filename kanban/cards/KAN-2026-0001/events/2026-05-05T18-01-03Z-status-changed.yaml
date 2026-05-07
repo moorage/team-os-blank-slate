@@ -1,0 +1,7 @@
+actor: moorage
+card_id: KAN-2026-0001
+from_status: definition
+status: validation
+summary: Moved from definition to validation from the native Team OS app.
+timestamp: 2026-05-05T18:01:03Z
+type: status-changed

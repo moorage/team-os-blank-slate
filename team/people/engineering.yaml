@@ -3,6 +3,7 @@ kind: functional-alias
 display_name: Engineering
 status: active
 summary: Functional reviewer alias referenced by the sample product card.
+emoji: 🏗️
 handles: {}
 references:
   - kanban/cards/KAN-2026-0001/card.md

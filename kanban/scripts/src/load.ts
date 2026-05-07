@@ -14,12 +14,14 @@ import {
   EventSchema,
   FeatureIndexSchema,
   TeamDirectoryIndexSchema,
+  TeamDirectoryRecordSchema,
   type Board,
   type CardRecord,
   type CommentRecord,
   type EventRecord,
   type FeatureIndex,
   type TeamDirectoryIndex,
+  type TeamDirectoryRecord,
   type LoadIssue,
 } from "./schemas.js";
 
@@ -117,6 +119,20 @@ export async function loadTeamDirectoryIndex(root: string): Promise<TeamDirector
   return TeamDirectoryIndexSchema.parse(parseYaml(text));
 }
 
+export async function loadTeamDirectoryRecords(root: string): Promise<TeamDirectoryRecord[]> {
+  const index = await loadTeamDirectoryIndex(root);
+  const records = await Promise.all(index.entries.map(async (entry) => {
+    const filePath = path.join(root, entry.path);
+    const text = await readFile(filePath, "utf8");
+    const record = TeamDirectoryRecordSchema.parse(parseYaml(text));
+    if (record.id !== entry.key) {
+      throw new Error(`Team directory record ${entry.path} declares id ${record.id}, expected ${entry.key}.`);
+    }
+    return record;
+  }));
+  return records.sort((left, right) => left.display_name.localeCompare(right.display_name) || left.id.localeCompare(right.id));
+}
+
 export async function loadRepositorySafely(root: string): Promise<{
   boards: Board[];
   cards: CardRecord[];
@@ -157,6 +173,24 @@ export async function loadRepositorySafely(root: string): Promise<{
       message: formatError(error),
       path: path.join(root, "team", "people", "index.yaml"),
     });
+  }
+  if (teamDirectory.entries.length > 0) {
+    for (const entry of teamDirectory.entries) {
+      const filePath = path.join(root, entry.path);
+      try {
+        const text = await readFile(filePath, "utf8");
+        const record = TeamDirectoryRecordSchema.parse(parseYaml(text));
+        if (record.id !== entry.key) {
+          throw new Error(`Team directory record ${entry.path} declares id ${record.id}, expected ${entry.key}.`);
+        }
+      } catch (error) {
+        issues.push({
+          kind: "team-directory",
+          message: formatError(error),
+          path: filePath,
+        });
+      }
+    }
   }
 
   const cardFiles = await fg(CARD_GLOB, { cwd: root, absolute: true });

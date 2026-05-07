@@ -1,5 +1,6 @@
 id: launch
 name: Launch readiness
+emoji: 🚀
 description: Launch work that spans comms, readiness, and review.
 card_types:
   - feature
@@ -7,13 +8,17 @@ card_types:
 columns:
   - id: planning
     label: Planning
+    emoji: 🧭
   - id: readying
     label: Readying
+    emoji: 📣
     wip_limit: 3
   - id: launched
     label: Launched
+    emoji: 🚀
   - id: reviewed
     label: Reviewed
+    emoji: 🧾
 done_rules:
   launched:
     required_artifact_types:

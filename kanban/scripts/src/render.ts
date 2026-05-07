@@ -6,6 +6,11 @@ import { compareCardIds } from "./ids.js";
 import { loadBoards, loadCards } from "./load.js";
 import type { Board, CardRecord } from "./schemas.js";
 
+function displayCardTitle(card: CardRecord): string {
+  const emojiPrefix = card.frontmatter.emoji ? `${card.frontmatter.emoji} ` : "";
+  return `${emojiPrefix}${card.frontmatter.title}`;
+}
+
 function latestActivity(card: CardRecord): string {
   const timestamps = [
     card.frontmatter.updated_at,
@@ -36,18 +41,45 @@ function cardLine(card: CardRecord, board: Board, ref: string): string {
   const age = daysBetween(card.frontmatter.created_at, ref);
   const missing = missingArtifactsForCurrentStatus(card, board);
   const suffix = missing.length > 0 ? ` | missing: ${missing.join(", ")}` : "";
-  return `- ${card.frontmatter.id} — ${card.frontmatter.title} | priority ${card.frontmatter.priority} | owner ${card.frontmatter.owner} | assignees ${assignees} | sitting with ${sittingWith} | age ${age}d${suffix}`;
+  return `- ${card.frontmatter.id} — ${displayCardTitle(card)} | priority ${card.frontmatter.priority} | owner ${card.frontmatter.owner} | assignees ${assignees} | sitting with ${sittingWith} | age ${age}d${suffix}`;
+}
+
+function compareCardsWithinColumn(left: CardRecord, right: CardRecord): number {
+  const byOrder = left.frontmatter.column_order - right.frontmatter.column_order;
+  if (byOrder !== 0) {
+    return byOrder;
+  }
+  return compareCardIds(left.frontmatter.id, right.frontmatter.id);
+}
+
+function columnHeading(column: Board["columns"][number]): string {
+  const headingLabel = column.emoji ? `${column.emoji} ${column.label}` : column.label;
+  const lightBackgroundHex = column.light_background_hex?.toUpperCase() ?? null;
+  const darkBackgroundHex = column.dark_background_hex?.toUpperCase() ?? null;
+  if (!lightBackgroundHex && !darkBackgroundHex) {
+    return `## ${headingLabel}`;
+  }
+  if (lightBackgroundHex && darkBackgroundHex && lightBackgroundHex === darkBackgroundHex) {
+    return `## ${headingLabel} · background ${lightBackgroundHex}`;
+  }
+
+  const modeSegments = [
+    lightBackgroundHex ? `light ${lightBackgroundHex}` : null,
+    darkBackgroundHex ? `dark ${darkBackgroundHex}` : null,
+  ].filter((segment): segment is string => segment !== null);
+  return `## ${headingLabel} · ${modeSegments.join(" · ")}`;
 }
 
 function renderBoard(board: Board, cards: CardRecord[], ref: string): string {
+  const heading = board.emoji ? `${board.emoji} ${board.name}` : board.name;
   const sections = board.columns.map((column) => {
     const columnCards = cards
       .filter((card) => card.frontmatter.board === board.id && card.frontmatter.status === column.id)
-      .sort((left, right) => compareCardIds(left.frontmatter.id, right.frontmatter.id));
+      .sort(compareCardsWithinColumn);
     const body = columnCards.length > 0 ? columnCards.map((card) => cardLine(card, board, ref)).join("\n") : "No cards.";
-    return `## ${column.label}\n\n${body}`;
+    return `${columnHeading(column)}\n\n${body}`;
   });
-  return `# ${board.name}\n\nGenerated from canonical card state.\n\n${sections.join("\n\n")}\n`;
+  return `# ${heading}\n\nGenerated from canonical card state.\n\n${sections.join("\n\n")}\n`;
 }
 
 function renderBlocked(cards: CardRecord[], boards: Map<string, Board>, ref: string): string {
@@ -91,7 +123,7 @@ function renderRecentlyMoved(cards: CardRecord[]): string {
     .map((card) => {
       const latestEvent = card.events.at(-1);
       const latestSummary = latestEvent?.summary ?? "No events.";
-      return `- ${card.frontmatter.id} — ${card.frontmatter.title} | moved ${latestActivity(card)} | ${latestSummary}`;
+      return `- ${card.frontmatter.id} — ${displayCardTitle(card)} | moved ${latestActivity(card)} | ${latestSummary}`;
     });
   return `# Recently Moved\n\n${lines.join("\n")}\n`;
 }
@@ -103,7 +135,7 @@ function renderStale(cards: CardRecord[], thresholdDays: number, ref: string): s
   }
   const lines = stale
     .sort((left, right) => compareCardIds(left.frontmatter.id, right.frontmatter.id))
-    .map((card) => `- ${card.frontmatter.id} — ${card.frontmatter.title} | last moved ${latestActivity(card)}`);
+    .map((card) => `- ${card.frontmatter.id} — ${displayCardTitle(card)} | last moved ${latestActivity(card)}`);
   return `# Stale Cards\n\n${lines.join("\n")}\n`;
 }
 
@@ -116,7 +148,7 @@ function renderShipped(cards: CardRecord[], ref: string): string {
   }
   const lines = shipped
     .sort((left, right) => compareCardIds(left.frontmatter.id, right.frontmatter.id))
-    .map((card) => `- ${card.frontmatter.id} — ${card.frontmatter.title} | shipped ${latestActivity(card)}`);
+    .map((card) => `- ${card.frontmatter.id} — ${displayCardTitle(card)} | shipped ${latestActivity(card)}`);
   return `# Shipped This Week\n\n${lines.join("\n")}\n`;
 }
 

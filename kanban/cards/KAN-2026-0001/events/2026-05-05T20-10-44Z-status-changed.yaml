@@ -1,0 +1,7 @@
+actor: moorage
+card_id: KAN-2026-0001
+from_status: intake
+status: discovery
+summary: Moved from intake to discovery from the native Team OS app.
+timestamp: 2026-05-05T20:10:44Z
+type: status-changed

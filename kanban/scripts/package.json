@@ -8,6 +8,8 @@
     "render": "tsx src/cli.ts render",
     "standup": "tsx src/cli.ts standup",
     "history": "tsx src/cli.ts history",
+    "native:export": "tsx src/cli.ts native-export",
+    "native:mutate": "tsx src/cli.ts native-mutate",
     "test": "vitest run",
     "typecheck": "tsc --noEmit"
   },

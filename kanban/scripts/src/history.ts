@@ -34,14 +34,15 @@ export async function renderStandup(root: string): Promise<string> {
   const cards = await loadCards(root);
   const blocked = cards.filter((card) => card.frontmatter.status === "blocked");
   const ready = cards.filter((card) => card.frontmatter.status !== "blocked");
+  const displayCardTitle = (title: string, emoji: string | null) => `${emoji ? `${emoji} ` : ""}${title}`;
 
   const blockedLines =
     blocked.length > 0
-      ? blocked.map((card) => `- ${card.frontmatter.id} — ${card.frontmatter.title} | sitting with ${card.frontmatter.sitting_with}`)
+      ? blocked.map((card) => `- ${card.frontmatter.id} — ${displayCardTitle(card.frontmatter.title, card.frontmatter.emoji)} | sitting with ${card.frontmatter.sitting_with}`)
       : ["No blocked cards."];
   const readyLines =
     ready.length > 0
-      ? ready.map((card) => `- ${card.frontmatter.id} — ${card.frontmatter.title} | next action with ${card.frontmatter.sitting_with}`)
+      ? ready.map((card) => `- ${card.frontmatter.id} — ${displayCardTitle(card.frontmatter.title, card.frontmatter.emoji)} | next action with ${card.frontmatter.sitting_with}`)
       : ["No active cards."];
 
   return `# Standup Summary\n\n## Blocked\n\n${blockedLines.join("\n")}\n\n## Active\n\n${readyLines.join("\n")}\n`;

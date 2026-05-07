@@ -1,5 +1,6 @@
 id: bugs
 name: Bugs
+emoji: 🚨
 description: Bug and incident work from triage through resolution.
 card_types:
   - bug
@@ -7,20 +8,26 @@ card_types:
 columns:
   - id: triage
     label: Triage
+    emoji: 🐛
   - id: investigating
     label: Investigating
+    emoji: 🔍
     wip_limit: 4
   - id: fixing
     label: Fixing
+    emoji: 🛠️
     wip_limit: 4
   - id: blocked
     label: Blocked
+    emoji: ⚠️
     wip_limit: 3
   - id: validating
     label: Validating
+    emoji: 🧪
     wip_limit: 3
   - id: resolved
     label: Resolved
+    emoji: ✅
 done_rules:
   validating:
     required_artifact_types:

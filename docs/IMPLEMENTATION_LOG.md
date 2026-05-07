@@ -4,11 +4,13 @@
   - none
 
 - recently completed ExecPlans:
+  - `docs/exec-plans/completed/2026-05-07-native-repo-contract-backport.md`
   - `docs/exec-plans/completed/2026-05-04-native-github-app-targets.md`
   - `docs/exec-plans/completed/2026-05-04-team-os-text-kanban.md`
 
-- current milestone: Team OS native foundation completed
+- current milestone: shared native repo contract backport completed
 - recent implementation:
+  - 2026-05-07: backported the current repo-side native Team OS contract from `team-os-souschefstudio`, adding the native export/mutate CLI bridge, current board/card/team schema fields, append-only sample events, GitHub App setup docs, and removal of the older generated repo-map workflow from blank-slate
   - 2026-05-04: converted the repository into a Team OS reference implementation with text-native kanban data, linked product artifacts, generated views, Codex skills, and a Swift native-core package
   - 2026-05-04: replaced placeholder-only native GitHub services with live REST-backed auth, repository inspection, branch creation, file writes, and pull-request upserts
   - 2026-05-04: generated and checked in `apps/native/TeamOSApps.xcodeproj` plus shared macOS/iOS shells that build against `TeamOSCore`
@@ -28,9 +30,9 @@
 - evidence gathered
   - Team OS validation passed and wrote `kanban/views/validation-errors.md`
   - generated views were written under `kanban/views/`
+  - repo-side Team OS TypeScript typechecking passed after the native bridge and schema backport
   - kanban TypeScript tests passed
   - `TeamOSCore` Swift tests passed, including live GitHub request-construction coverage
   - `TeamOSMacApp` and `TeamOSiOSApp` built successfully from `apps/native/TeamOSApps.xcodeproj`
 - open risks or blockers:
-  - the Apple shells still stop at repository readiness and sample-backed Team OS state rather than end-to-end mutation UI
   - live GitHub flows are verified through injected transports and local builds, not a credentialed smoke repository in CI
